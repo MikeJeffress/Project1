@@ -3,16 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="20dp"
+    android:background="@drawable/background"
     tools:context="com.adi2.michaeljeffress.project_1.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The TO-DO List"
+        android:text="DON'T FORGET LIST"
         android:textSize="35dp"
         android:id="@+id/textView_Main"
         android:layout_alignParentTop="true"
@@ -21,7 +19,7 @@
     <ListView
         android:id="@+id/listView_Main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/editText_Main"
@@ -48,13 +46,5 @@
         android:layout_alignEnd="@+id/listView_Main" />
 
 
-    <Button
-        android:id="@+id/button_RemoveToDo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Remove"
-        android:layout_below="@+id/textView_Main"
-        android:layout_alignLeft="@+id/button_Main"
-        android:layout_alignStart="@+id/button_Main" />
 
 </RelativeLayout>
