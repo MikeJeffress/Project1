@@ -56,9 +56,15 @@ public class TasksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String task = tEditText.getText().toString();
-                tArrayList.add(task);
-                tArrayAdapter.notifyDataSetChanged();
-                tEditText.setText("");
+                if (!task.isEmpty()) {
+                    tArrayList.add(task);
+                    tArrayAdapter.notifyDataSetChanged();
+                    tEditText.setText("");
+                }
+                else {
+                    Toast.makeText(TasksActivity.this, "Please enter text.", Toast.LENGTH_LONG).show();
+
+                }
                 //Need to stop it from adding blank tasks
             }
         });
@@ -69,6 +75,7 @@ public class TasksActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 tArrayList.remove(position);
+                tArrayAdapter.notifyDataSetChanged();
                 return false;
             }
         });
@@ -86,18 +93,6 @@ public class TasksActivity extends AppCompatActivity {
 
 
     }
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if(requestCode == LISTVIEW_REQUEST_CODE){
-//            if(resultCode == RESULT_OK) {
-//                ArrayList<String> receivedResults = data.getStringArrayListExtra("todos");
-//                int Position = data.getIntExtra("pos", 0);
-//                categories.get(Position).setTodos(receivedResults);
-//                tArrayAdapter.notifyDataSetChanged();
-//
-//            }
-//
-//        }
-//    }
+
 
 }

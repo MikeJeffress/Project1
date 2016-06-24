@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -39,17 +40,23 @@ public class MainActivity extends AppCompatActivity {
         mListView.setAdapter(mArrayAdapter);
 
 
+
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String toDo = mEditText.getText().toString();
-                mArrayList.add(toDo);
-                Category mCategory = new Category ();
-                mCategory.setCategory(toDo);
-                categories.add(mCategory);
-                mArrayAdapter.notifyDataSetChanged();
-                mEditText.setText("");
-                //Need to stop it from adding blank todos
+                if (!toDo.isEmpty()) {
+                    mArrayList.add(toDo);
+                    Category mCategory = new Category();
+                    mCategory.setCategory(toDo);
+                    categories.add(mCategory);
+                    mArrayAdapter.notifyDataSetChanged();
+                    mEditText.setText("");
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Please enter text.", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
