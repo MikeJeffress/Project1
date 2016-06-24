@@ -65,7 +65,6 @@ public class TasksActivity extends AppCompatActivity {
                     Toast.makeText(TasksActivity.this, "Please enter text.", Toast.LENGTH_LONG).show();
 
                 }
-                //Need to stop it from adding blank tasks
             }
         });
 
